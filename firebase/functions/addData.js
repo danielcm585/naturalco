@@ -18,7 +18,7 @@ const addData = async (req, res) => {
           data: userData,
         });
       }).catch((err) => {
-        res.status(201).json({
+        res.status(500).json({
           message: err.message,
         });
       });

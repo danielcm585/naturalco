@@ -2,11 +2,7 @@ const functions = require("firebase-functions");
 const getData = require("./getData");
 const addData = require("./addData");
 
-exports.getData = functions.https.onRequest(
-  {cors: ["localhost:3000", "localhost"]},
-  getData
-  );
-  exports.addData = functions.https.onRequest(
-  {cors: ["localhost:3000", "localhost"]},
-  addData
-);
+const cors = require('cors')({origin: true});
+
+exports.getData = functions.https.onRequest(getData);
+exports.addData = functions.https.onRequest(addData);
